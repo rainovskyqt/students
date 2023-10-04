@@ -1,21 +1,22 @@
 import sqlite3
 import os
-import sys
 
-import settings
+# from ..settings import DB_PATH
 
+from settings import DB_PATH
 
 class DBManager:
     def __init__(self, db_path: str) -> None:
         self.db_path = db_path
+        print(db_path, self.db_path)
+
+    def check_base(self):
+        return os.path.exists(self.db_path)
 
     def connect_to_base(self):
         conn = sqlite3.connect(self.db_path)
         cur = conn.cursor()
         return conn, cur
-
-    def check_base(self):
-        return os.path.exists(self.db_path)
 
     def create_base(self, script_path: str):
         conn, cur = self.connect_to_base()
@@ -25,6 +26,7 @@ class DBManager:
             conn.close()
         except Exception as ex:
             print(ex)
+            os.remove(self.db_path)
 
     def execute(self, query: str, args=(), many: bool = True):
         conn, cur = self.connect_to_base()
@@ -40,4 +42,4 @@ class DBManager:
             conn.close()
 
 
-base_manager = DBManager(settings.DB_PATH)
+base_manager = DBManager(DB_PATH)

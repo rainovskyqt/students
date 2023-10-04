@@ -1,10 +1,10 @@
 CREATE TABLE groups(
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(100)
 );
 
 CREATE TABLE students(
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTOINCREMENT,
     surname VARCHAR(100),
     name VARCHAR(100)
 );
