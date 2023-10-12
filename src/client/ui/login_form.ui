@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>381</width>
-    <height>231</height>
+    <height>202</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -134,9 +134,9 @@
      </layout>
     </item>
     <item>
-     <widget class="QLabel" name="label_out">
+     <widget class="QLabel" name="lbl_error">
       <property name="text">
-       <string>TextLabel</string>
+       <string>ошибка</string>
       </property>
      </widget>
     </item>

@@ -4,12 +4,15 @@ from fastapi.responses import RedirectResponse
 from database.db_manager import base_manager
 from groups import router as group_router
 from students import router as student_router
+from users import router as users_router
 from settings import SCRIPTS_TABLES_PATH, SCRIPTS_RIMARY_DATA_PATH
 
 app = FastAPI()
 
+app.include_router(users_router, prefix='/users')
 app.include_router(group_router, prefix="/groups")
 app.include_router(student_router, prefix='/students')
+
 
 
 @app.get('/')

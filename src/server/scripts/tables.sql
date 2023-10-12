@@ -1,7 +1,17 @@
+CREATE TABLE posts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(100)
+);
+
 CREATE TABLE users(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     login VARCHAR(100),
-    password VARCHAR(100)
+    password VARCHAR(100),
+    post_id INTEGER,
+    reg_date INT NOT NULL DEFAULT (strftime('%s','now')),
+    FOREIGN KEY(post_id)
+        REFERENCES posts(id)
+            ON DELETE NO ACTION
 );
 
 CREATE TABLE groups(

@@ -25,7 +25,7 @@ class DBManager:
             cur.executescript(open(script_data_path).read())
             conn.commit()
             conn.close()
-        except Exception as ex:
+        except sqlite3.Error as ex:
             print(ex)
             os.remove(self.db_path)
 

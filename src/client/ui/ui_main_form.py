@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "База студентов"))
         self.line_new_group_name.setPlaceholderText(_translate("MainWindow", "Название новой группы"))
         self.btn_add.setText(_translate("MainWindow", "Добавить"))
         item = self.tableWidget.horizontalHeaderItem(0)

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '../ui/login_form.ui'
+# Form implementation generated from reading ui file 'login_form.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(381, 231)
+        MainWindow.resize(381, 202)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -55,9 +55,12 @@ class Ui_MainWindow(object):
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem3)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.label_out = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_out.setObjectName("label_out")
-        self.verticalLayout.addWidget(self.label_out)
+        self.lbl_error = QtWidgets.QLabel(parent=self.centralwidget)
+        self.lbl_error.setObjectName("lbl_error")
+        self.lbl_error.setStyleSheet('color : red')
+        self.lbl_error.setVisible(False)
+        self.lbl_error.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.verticalLayout.addWidget(self.lbl_error)
         MainWindow.setCentralWidget(self.centralwidget)
         self.action = QtGui.QAction(parent=MainWindow)
         self.action.setObjectName("action")
@@ -67,11 +70,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "форма входа"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Вход в базу"))
         self.label.setText(_translate("MainWindow", "Добро пожаловать в Students"))
         self.line_login.setPlaceholderText(_translate("MainWindow", "Логин"))
         self.line_password.setPlaceholderText(_translate("MainWindow", "Пароль"))
         self.button_enter.setText(_translate("MainWindow", "Вход"))
         self.push_cancel.setText(_translate("MainWindow", "Отмена"))
-        self.label_out.setText(_translate("MainWindow", "TextLabel"))
+        self.lbl_error.setText(_translate("MainWindow", "Такого пользователя в базе нет"))
         self.action.setText(_translate("MainWindow", "Выход"))
